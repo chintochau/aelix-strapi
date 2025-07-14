@@ -1,0 +1,121 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_portfolios",
+  "info": {
+    "singularName": "project-portfolio",
+    "pluralName": "project-portfolios",
+    "displayName": "Project Portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "project_summary": {
+      "type": "text"
+    },
+    "challenge": {
+      "type": "blocks"
+    },
+    "solution": {
+      "type": "blocks"
+    },
+    "implementation_details": {
+      "type": "blocks"
+    },
+    "project_duration": {
+      "type": "string"
+    },
+    "team_size": {
+      "type": "integer"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "demo_video_url": {
+      "type": "string"
+    },
+    "live_url": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean"
+    },
+    "project_date": {
+      "type": "date"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "workflow_json": {
+      "type": "json"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial",
+      "mappedBy": "related_project"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "project_portfolios"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::technology.technology",
+      "inversedBy": "project_portfolios"
+    },
+    "industry": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::industry.industry",
+      "inversedBy": "project_portfolios"
+    },
+    "results": {
+      "type": "component",
+      "component": "project.results",
+      "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "project.seo",
+      "repeatable": false
+    },
+    "blog_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post",
+      "mappedBy": "project_portfolios"
+    }
+  }
+}

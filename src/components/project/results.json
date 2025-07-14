@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_project_results",
+  "info": {
+    "displayName": "results",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "metric_name": {
+      "type": "string"
+    },
+    "metric_value": {
+      "type": "string"
+    },
+    "improvement_percentage": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

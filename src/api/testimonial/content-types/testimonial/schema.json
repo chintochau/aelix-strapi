@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client_name": {
+      "type": "string"
+    },
+    "client_title": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "testimonial": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "client_photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "is_featured": {
+      "type": "boolean"
+    },
+    "related_project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project-portfolio.project-portfolio",
+      "inversedBy": "testimonials"
+    }
+  }
+}
