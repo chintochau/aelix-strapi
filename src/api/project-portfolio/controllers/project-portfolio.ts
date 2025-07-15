@@ -9,7 +9,11 @@ export default factories.createCoreController('api::project-portfolio.project-po
     const { slug } = ctx.params;
     
     const entity = await strapi.db.query('api::project-portfolio.project-portfolio').findOne({
-      where: { slug }
+      where: { slug },
+      populate: {
+        images: true,
+        hero_image: true
+      }
     });
 
     if (!entity) {
