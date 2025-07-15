@@ -12,7 +12,14 @@ export default factories.createCoreController('api::project-portfolio.project-po
       where: { slug },
       populate: {
         images: true,
-        hero_image: true
+        hero_image: true,
+        testimonials: true,
+        services: true,
+        technologies: true,
+        industry: true,
+        results: true,
+        seo: true,
+        blog_posts: true
       }
     });
 
