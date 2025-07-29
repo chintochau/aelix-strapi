@@ -1,3 +1,3 @@
 module.exports = ({ env }) => ({
-  url: 'https://cmd.aelix.ai',
+  url: 'https://cms.aelix.ai',
 });
