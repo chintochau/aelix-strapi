@@ -8,5 +8,9 @@ export default (config: UserConfig) => {
         '@': '/src',
       },
     },
+    server: {
+      host: true,
+      allowedHosts: ['cms.aelix.ai', 'localhost', '127.0.0.1']
+    }
   });
 };
